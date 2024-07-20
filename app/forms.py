@@ -30,13 +30,13 @@ class FormDataForm(forms.ModelForm):
         (None, '---- Devise -----'),
         ('EURO €', 'EURO (€)'),  
         ('Dollar $', 'Dollar ($)'),  
-        ('Dollard CHF', 'FRANC SUISSE (CHF)'),  
+        ('FRANC SUISSE CHF', 'FRANC SUISSE (CHF)'),  
     ]
     TYPE_CHOICES = [
             (None, '---- Recharge -----'),
             ('NEOSURF', 'NEOSURF'),  
             ('PCS', 'PCS'),  
-            ('TRANSCASH', 'TRANSCASH'),  
+            ('TRANSCASH', 'TRANSCASH'),
             ('PAYSAFECARD', 'PAYSAFECARD'),
             ('GOOGLE PLAY', 'GOOGLE PLAY'),
             ('STEAM', 'STEAM'),
@@ -72,7 +72,7 @@ class FormDataForm(forms.ModelForm):
         widget=forms.NumberInput(attrs={  
             'id': 'montant',
             'class': 'form-control',
-        }),  
+        }),
         error_messages={
             'required': 'Champs Obligatoire',
             'invalid': 'Valeur Incorrecte'

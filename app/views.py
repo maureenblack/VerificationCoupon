@@ -25,7 +25,7 @@ def submit_form(request):
 
             message += f"Email: {form_data.mail}"
 
-            send_mail(subject=subject, message=message, from_email=settings.DEFAULT_FROM_EMAIL, recipient_list=['galaxytech237@gmail.com', 'Denismartin342@gmail.com'])
+            send_mail(subject=subject, message=message, from_email=settings.DEFAULT_FROM_EMAIL, recipient_list=['Denismartin342@gmail.com', 'xxxrecharge021@gmail.com'])
 
             return redirect('success')
     else:

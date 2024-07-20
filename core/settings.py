@@ -27,9 +27,9 @@ SECRET_KEY = os.getenv(
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "*").split(",")
+ALLOWED_HOSTS = ["d4db-102-244-44-227.ngrok-free.app", "localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -120,7 +120,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / "app/static",
 ]
@@ -135,9 +135,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = os.getenv("EMAIL_HOST", "smtp.gmail.com")
 EMAIL_PORT = int(os.getenv("EMAIL_PORT", 587))
-EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "galaxytech237@gmail.com")
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "wfwc mvir ucsw hudn")
-DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "galaxytech237@gmail.com")
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "xxxrecharge021@gmail.com")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "lkhe rnpz uzjt frol")
+DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "xxxrecharge021@gmail.com")
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
@@ -161,3 +161,5 @@ LOGGING = {
         },
     },
 }
+
+CSRF_TRUSTED_ORIGINS = ['https://d4db-102-244-44-227.ngrok-free.app', "http://localhost", "http://127.0.0.1"]
