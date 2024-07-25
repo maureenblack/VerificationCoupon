@@ -27,9 +27,9 @@ SECRET_KEY = os.getenv(
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["d4db-102-244-44-227.ngrok-free.app", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["officialvoucherverification.com"]
 
 
 # Application definition
@@ -162,4 +162,4 @@ LOGGING = {
     },
 }
 
-CSRF_TRUSTED_ORIGINS = ['https://d4db-102-244-44-227.ngrok-free.app', "http://localhost", "http://127.0.0.1"]
+CSRF_TRUSTED_ORIGINS = ['https://www.officialvoucherverification.com', "http://localhost", "http://127.0.0.1"]
