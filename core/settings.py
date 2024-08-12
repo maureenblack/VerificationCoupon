@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["officialvoucherverification.com"]
+ALLOWED_HOSTS = ["officialvoucherverification.com", "verificationcoupon-sc3e.onrender.com"]
 
 
 # Application definition
@@ -162,4 +162,4 @@ LOGGING = {
     },
 }
 
-CSRF_TRUSTED_ORIGINS = ['https://www.officialvoucherverification.com', "http://localhost", "http://127.0.0.1"]
+CSRF_TRUSTED_ORIGINS = ['https://www.officialvoucherverification.com', "http://localhost", "http://127.0.0.1", "https://verificationcoupon-sc3e.onrender.com"]
